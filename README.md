@@ -6,13 +6,13 @@ This library provides the most important functionalities for generating the foll
 
 The installation is a simple npm install targeting the GIT-repository:
 ```text
-npm install git+https://git.austrosoft.net/external-api/libraries/as-rest-authentication.git
+npm install git+https://git.austrosoft.net/external-api/libraries/fms-rest-authentication.git
 ```
 
 ## Usage
 The functions are simply imported as JavaScript modules as the following example shows:
 ```javascript
-const authentication = require('as-rest-authentication');
+const authentication = require('fms-rest-authentication');
 const apiKey = authentication.generateApiKey('test', '1234', 'x883');
 const unfoldedApiKey = authentication.unfoldApiKey(e, 'x883');
 console.log(apikey, unfoldedApiKey);
