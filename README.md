@@ -11,7 +11,7 @@ npm install git+https://git.austrosoft.net/external-api/libraries/as-rest-authen
 
 ## Usage
 The functions are simply imported as JavaScript modules as the following example shows:
-```javascript 1.8
+```javascript
 const authentication = require('as-rest-authentication');
 const apiKey = authentication.generateApiKey('test', '1234', 'x883');
 const unfoldedApiKey = authentication.unfoldApiKey(e, 'x883');
@@ -20,7 +20,7 @@ console.log(apikey, unfoldedApiKey);
 
 ## Functions
 The following functions are provided by the base module:
-```javascript 1.8
+```javascript
 const salt = function (apiKey, key, hashAlgorithm);
 const signature = function (apiVersion, apiKey, salt, query, httpBody, timestamp, hashAlgorithm);
 const generateApiKey = function (username, password, key, hashAlgorithm);
@@ -29,7 +29,7 @@ const unfoldApiKey = function (apiKey, key);
 
 ### Salt
 Salts are generated using the public API key and the private passphrase which is only known by the server. The function interface looks like the following:
-```javascript 1.8
+```javascript
 // Function parameter signature:
 //   apiKey: string
 //   passphrase: string
@@ -46,7 +46,7 @@ The hash algorithm defaults to SHA-256 if none is provided explicitly.
 
 ### Signature
 A signatures takes all possible input parameters to generate a unique identifier. The following function signature is used:
-```javascript 1.8
+```javascript
 // Function parameter signature:
 //   apiVersion: string
 //   apiKey: string
@@ -61,7 +61,7 @@ const signatureFn = function (apiVersion, apiKey, salt, query, httpBody = '', ti
 
 ### Generate an API Key
 API key are generated using any username, password and passphrase. The passphrase (private key) length does not matter for the encryption process of the key. The encryption process is based on AES and allows fast and simple synchronous decryption and encryption. The key is returned as base64 encoding.
-```javascript 1.8
+```javascript
 // Function parameter signature:
 //   username: string
 //   password: string
@@ -73,7 +73,7 @@ const generateApiKey = function (username, password, key, hashAlgorithm = hash.s
 
 ### Unfold an API Key
 An API key is simply synchronously encrypted data. That means, given the API key and the passphrase (private key), the API key can be unfolded and deciphered.
-```javascript 1.8
+```javascript
 // Function parameter signature:
 //   apiKey: string
 //   key: string
