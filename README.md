@@ -4,7 +4,19 @@ This library provides the most important functionalities for generating the foll
 * **Signature** - created from the URL, HTTP body and other properties
 * **API Key** - a globally valid API Key using username, password and a passphrase
 
-## Import the Library
+The installation is a simple npm install targeting the GIT-repository:
+```text
+npm install git+https://git.austrosoft.net/external-api/libraries/as-rest-authentication.git
+```
+
+## Usage
+The functions are simply imported as JavaScript modules as the following example shows:
+```javascript 1.8
+const authentication = require('as-rest-authentication');
+const apiKey = authentication.generateApiKey('test', '1234', 'x883');
+const unfoldedApiKey = authentication.unfoldApiKey(e, 'x883');
+console.log(apikey, unfoldedApiKey);
+```
 
 ## Functions
 The following functions are provided by the base module:
