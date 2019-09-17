@@ -1,5 +1,5 @@
 {
-  "name": "rest-authenticator",
+  "name": "as-rest-authentication",
   "version": "1.0.0",
   "description": "A library for generating and unfolding fms-Systems REST API-keys.",
   "author": "Daniel Kleebinder",

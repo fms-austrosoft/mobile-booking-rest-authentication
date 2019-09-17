@@ -20,8 +20,6 @@ const signatureFn = function (apiVersion, apiKey, salt, query, httpBody = '', ti
         query + separator +
         timestamp + separator;
 
-    console.log(concat)
-
     const hash = hashAlgorithm(concat);
     return apiVersion + ':' + hash;
 };
