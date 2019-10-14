@@ -32,11 +32,16 @@ const generateApiKeyFn = function (username, password, key, hashAlgorithm = hash
         hashAlgorithm(key);
 
     const apiKey = aes.encrypt(concat, preparePassphrase(key));
-    return Buffer.from(apiKey).toString('base64');
+    const byteArray = new Uint8Array(apiKey.length);
+    for (let i = 0; i < apiKey.length; i++) {
+        byteArray[i] = apiKey.charCodeAt(i);
+    }
+    return Buffer.from(byteArray).toString('base64');
 };
 
 const unfoldApiKeyFn = function (apiKey, key) {
-    const plainApiKey = Buffer.from(apiKey, 'base64').toString();
+    const plainApiKey = Buffer.from(apiKey, 'base64');
+    console.log('plainApiKey:', plainApiKey);
     const decrypted = aes.decrypt(plainApiKey, preparePassphrase(key));
     const split = decrypted.split('::');
 
