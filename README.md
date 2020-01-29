@@ -35,3 +35,4 @@ A signatures takes all possible input parameters to generate a unique identifier
 // returns: string
 const signatureFn = function (apiVersion, apiKey, salt, query, httpBody = '', timestamp = Date.now(), hashAlgorithm = hash.sha256)
 ```
+(the hashing algorithm defaults to SHA-256 which is the standard for signature generation)
