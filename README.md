@@ -1,4 +1,4 @@
-# fms REST Authentication Library
+# fms Mobile Booking REST Authentication
 This library provides the most important functionalities for generating the following REST-API properties exported as JavaScript and node modules:
 * **Salt** - generated from API Key and passphrase
 * **Signature** - created from the URL, HTTP body and other properties
@@ -6,7 +6,7 @@ This library provides the most important functionalities for generating the foll
 
 The installation is a simple npm install targeting the GIT-repository:
 ```text
-npm install git+https://git.austrosoft.net/external-api/libraries/fms-rest-authentication.git
+npm install git+https://github.com/fms-austrosoft/mobile-booking-rest-authentication.git
 ```
 
 ## Usage
