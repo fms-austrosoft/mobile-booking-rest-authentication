@@ -41,7 +41,6 @@ const generateApiKeyFn = function (username, password, key, hashAlgorithm = hash
 
 const unfoldApiKeyFn = function (apiKey, key) {
     const plainApiKey = Buffer.from(apiKey, 'base64');
-    console.log('plainApiKey:', plainApiKey);
     const decrypted = aes.decrypt(plainApiKey, preparePassphrase(key));
     const split = decrypted.split('::');
 
