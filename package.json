@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "node-forge": "^0.9.0"
+    "node-forge": "^0.10.0"
   },
   "license": "MIT"
 }
